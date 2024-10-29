@@ -18,11 +18,11 @@ git clone <repository-url>
 ```
 
 2. Install Dependencies:
-Navigate to the project directory and install the project dependencies using yarn
+Navigate to the project directory and install the project dependencies using npm install command.
 
 3. Start the Development Server:
 ```
-yarn start
+npm start
 ```
 
 This will launch the React app in your default web browser. You can access it at http://localhost:3000.
@@ -32,6 +32,4 @@ This will launch the React app in your default web browser. You can access it at
 json-server --watch src/Userdata/data.json --port 3001
 ```
 
-This will start the mock API server, and you can access the API at http://localhost:.
-
-Contributions are welcome! If you'd like to enhance this project or fix any issues, feel free to submit pull requests. Let's learn and build together.
+This will start the mock API server, and you can access the API at http://localhost:3001.
