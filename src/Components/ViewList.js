@@ -60,7 +60,7 @@ const ViewList = ({ userData, fetchAllUsers, deleteUser, updateUser }) => {
 
   // clicking confirm update on modal
   const confirmUpdate = () => {
-    selectedUser.dob && calculateAge(selectedUser.dob);
+    const age = selectedUser.dob && calculateAge(selectedUser.dob);
     fetch(`http://localhost:3001/users/${selectedUser.id}`, {
       method: "PUT",
       headers: {
@@ -70,7 +70,7 @@ const ViewList = ({ userData, fetchAllUsers, deleteUser, updateUser }) => {
         fname: selectedUser.fname,
         lname: selectedUser.lname,
         dob: selectedUser.dob,
-        age: selectedUser.age,
+        age: age,
         gender: selectedUser.gender,
         status: selectedUser.status,
       }),
@@ -96,7 +96,7 @@ const ViewList = ({ userData, fetchAllUsers, deleteUser, updateUser }) => {
     const year = age_dt.getUTCFullYear();  
       
     //now calculate the age of the user  
-    setSelectedUser({ ...selectedUser, age: Math.abs(year - 1970)})
+    return Math.abs(year - 1970);
   };
 
   // function to validate emil address

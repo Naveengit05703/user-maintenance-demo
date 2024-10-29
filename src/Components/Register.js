@@ -22,7 +22,7 @@ const Register = ({ userData, addUser }) => {
   };
 
   const confirmAdd = () => {
-    newUser.dob && calculateAge(newUser.dob);
+   const age = newUser.dob && calculateAge(newUser.dob);
     fetch(`http://localhost:3001/users`, {
       method: "POST",
       headers: {
@@ -32,7 +32,7 @@ const Register = ({ userData, addUser }) => {
         fname: newUser.fname,
         lname: newUser.lname,
         dob: newUser.dob,
-        age: newUser.age,
+        age: age,
         gender: newUser.gender,
         status: newUser.status,
       }),
@@ -58,14 +58,13 @@ const Register = ({ userData, addUser }) => {
     //extract year from date      
     const year = age_dt.getUTCFullYear();  
       
-    //now calculate the age of the user  
-    setnewUser({ ...newUser, age: Math.abs(year - 1970)})
+    //now calculate the age of the user
+    return Math.abs(year - 1970);  
   };
 
   const validateForm = (formObject) => {
     const alfaNumericRegex = /^[a-z0-9]+$/i;
     const isValidFirstName = alfaNumericRegex.test(formObject.fname);
-    const isValidAge = Number.isNaN(formObject.age);
     return isValidFirstName
   };
 
@@ -185,8 +184,7 @@ const NewUserFormComponent = ({ newUser, setnewUser }) => {
                             })
                           }
                         />{' Active'}
-            </Form.Check>     
-
+            </Form.Check>    
         </Form.Group>
       </Form>
     </div>
