@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "fname": "Kavin",
+      "lname": "k",
+      "dob": "2001-01-20",
+      "age": "23",
+      "gender": "Male",
+      "status": true,
+      "id": "1"
+    },
+    {
+      "fname": "Naveen",
+      "lname": "Kumar",
+      "dob": "1999-04-22",
+      "age": "25",
+      "gender": "Male",
+      "status": false,
+      "id": "2"
+    },
+    {
+      "fname": "Karthik",
+      "lname": "G",
+      "dob": "2000-03-10",
+      "age": "24",
+      "gender": "Male",
+      "status": true,
+      "id": "3"
+    },
+    {
+      "fname": "HemaLatha",
+      "lname": "k",
+      "dob": "2003-04-04",
+      "age": "21",
+      "gender": "Female",
+      "status": false,
+      "id": "4"
+    }
+  ]
+}
